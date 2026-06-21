@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jet: #2B2B2B;
+  --color-jet-light: #3D3D3D;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E0C36A;
+  --color-cream: #F5F0EB;
+  --color-charcoal: #1A1A1A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-jet font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-charcoal px-8 py-3 font-semibold uppercase tracking-widest text-sm
+           hover:bg-gold-light transition-all duration-300;
+  }
+  .btn-outline {
+    @apply border-2 border-gold text-gold px-8 py-3 font-semibold uppercase tracking-widest text-sm
+           hover:bg-gold hover:text-charcoal transition-all duration-300;
+  }
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-charcoal tracking-tight;
+  }
+  .section-subtitle {
+    @apply text-lg text-jet-light/70 max-w-2xl;
+  }
+  .input-field {
+    @apply w-full bg-white border border-gold/20 px-4 py-3 text-charcoal
+           placeholder:text-jet-light/40 focus:outline-none focus:border-gold transition-colors;
+  }
+}
+
